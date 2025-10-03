@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <title>help</title>
+</head>
+<body>
+  <section>
+  <nav class="navbar navbar-expand-lg custom-navbar shadow-sm fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center me-4" href="#">
+        <a href="../home/index.html">
+          <img src="../assets/logo.png" alt="Logo">
+        </a>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 center-links">
+          <li class="nav-item"><a class="nav-link active" href="#" onclick="filterProducts('all')">SHOP ALL</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="filterProducts('decor')">DECOR</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="filterProducts('office')">OFFICE</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="filterProducts('living room')">LIVING ROOM</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="filterProducts('bed room')">BED ROOM</a></li>
+          <li class="nav-item d-flex align-items-center">
+            <i class="bi bi-search text-dark fs-5 ms-3" id="openSearch"></i>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 right-links">
+          <li class="nav-item"><a class="nav-link active" href="../story/story.html">STORY</a></li>
+          <li class="nav-item"><a class="nav-link" href="../contact/contact.html">CONTACT</a></li>
+          <li class="nav-item"><a class="nav-link" href="../track order/trackorder.html">TRACK ORDER</a></li>
+          <li class="nav-item"><a class="nav-link" href="../help/help.html">HELP</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">LOGIN</a></li>
+          <a href="#" class="btn position-relative" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart">
+           <i class="bi bi-cart"></i>
+           <span id="cartCount" 
+           class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" 
+           style="display:none;">0</span>
+          </a>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-box">
+      <input type="text" class="form-control" placeholder="Search here...">
+      <button class="btn btn-light ms-2" id="closeSearch"><i class="bi bi-x-lg"></i></button>
+    </div>
+  </div>
+
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasCartLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasCartLabel">Your Cart</h5>
+      <hr>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <p>Your cart is empty.</p>
+    </div>
+    <div class="offcanvas-footer p-3 border-top" id="cartSubtotal">
+    <h6>Total: $0</h6>
+    <button class="btn btn-dark w-100 mt-2">Checkout</button>
+  </div>
+  </div>
+</section>
+
+
+
+
+
+<div class="container mt-4" style="display:none;">
+  <div class="row" id="productsContainer"></div>
+</div>
+
+
+
+  <section class="support-section">
+  <h3>24/7 SUPPORT</h3>
+  <h1>READY TO HELP</h1>
+  <hr>
+  <div class="support-container">
+    <div class="support-card">
+      <i class="bi bi-person-fill"></i>
+      <h1>ACCOUNT PRIVACY</h1>
+      <p>Quisque a pharetra quam. Donec et risus sem. Etiam sollicitudin leo eu congue gravida. In semper lectus neque, eu interdum nisl pretium sit amet etiam efficitur.</p>
+      <a href="#">PRIVACY POLICY →</a>
+    </div>
+
+    <div class="support-card">
+      <i class="bi bi-headphones"></i>
+      <h1>SUPPORT SPECIALIST</h1>
+      <p>Quisque a pharetra quam. Donec et risus sem. Etiam sollicitudin leo eu congue gravida. In semper lectus neque, eu interdum nisl pretium sit amet etiam efficitur.</p>
+      <a href="../contact/contact.html">CONTACT US →</a>
+    </div>
+
+    <div class="support-card">
+      <i class="bi bi-star-fill"></i>
+      <h1>SELLER STANDARDS</h1>
+      <p>Quisque a pharetra quam. Donec et risus sem. Etiam sollicitudin leo eu congue gravida. In semper lectus neque, eu interdum nisl pretium sit amet etiam efficitur.</p>
+      <a href="#">LEARN MORE →</a>
+    </div>
+  </div>
+  </section>
+
+  <section class="faq-section">
+  <h2>FAQ</h2>
+  <h1>FIND ANSWERS</h1>
+  <hr>
+
+  <div class="accordion-container">
+    <div class="accordion" id="accordionExample">
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            How do I know that my products lorem ipsum dolor sit?
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dapibus dignissim turpis nec interdum. Nunc faucibus turpis vitae mi rhoncus, sed interdum mi commodo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mauris est, sagittis id arcu eu, scelerisque maximus odio.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Where can I see my invoices?
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dapibus dignissim turpis nec interdum. Nunc faucibus turpis vitae mi rhoncus, sed interdum mi commodo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mauris est, sagittis id arcu eu, scelerisque maximus odio.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Can I compare prices between tincidunt dui in congue?
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dapibus dignissim turpis nec interdum. Nunc faucibus turpis vitae mi rhoncus, sed interdum mi commodo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mauris est, sagittis id arcu eu, scelerisque maximus odio.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            Are there any surcharges?
+          </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dapibus dignissim turpis nec interdum. Nunc faucibus turpis vitae mi rhoncus, sed interdum mi commodo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mauris est, sagittis id arcu eu, scelerisque maximus odio.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+            I made an online purchase. Where can I check order status?
+          </button>
+        </h2>
+        <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dapibus dignissim turpis nec interdum. Nunc faucibus turpis vitae mi rhoncus, sed interdum mi commodo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mauris est, sagittis id arcu eu, scelerisque maximus odio.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="help-section">
+  <img src="./img1.jpg" alt="img">
+  <div class="help-content">
+    <hr>
+    <h1>STILL NEED HELP?</h1>
+    <button><a href="../contact/contact.html">CONTACT US</a></button>
+  </div>
+</section>
+
+
+
+
+
+
+<section class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <a href="../home/index.html">
+          <img src="../assets/logo.png" alt="Logo">
+        </a>
+
+      </div>
+      <div class="footer-links">
+        <h1>LINKS</h1>
+        <a href="../story/story.html">Story</a>
+        <a href="../contact/contact.html">Contact</a>
+        <a href="../track order/trackorder.html">Track Order</a>
+        <a href="#Help">Help</a>
+      </div>
+      <div class="footer-categories">
+        <h1>CATEGORIES</h1>
+        <a href="#" onclick="filterProducts('bed room')">Bedroom (6)</a>
+        <a href="#" onclick="filterProducts('decor')">Decor (9)</a>
+        <a href="#" onclick="filterProducts('living room')">Living Room (6)</a>
+        <a href="#" onclick="filterProducts('office')">Office (11)</a>
+      </div>
+      <div class="footer-subscribe">
+        <h1>SUBSCRIBE</h1>
+        <div class="subscribe-box">
+          <input type="email" placeholder="Your email address...">
+          <button>SUBSCRIBE</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<section class="footer-bottom">
+    <div class="footer-bottom-container">
+      <div class="footer-copy">
+        <p>Copyright © 2025 Furniture Shop | Powered by Furniture Shop</p>
+      </div>
+      <div class="footer-social">
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+        <a href="#"><i class="bi bi-youtube"></i></a>
+        <a href="#"><i class="bi bi-twitter"></i></a>
+        <a href="#"><i class="bi bi-twitter-x"></i></a>
+      </div>
+
+    </div>
+  </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../data/data.js"></script>
+    <script src="../data/products.js"></script>
+    <script src="script.js"></script>
+
+
+      <div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="cartToast" class="toast align-items-center text-bg-dark border-0" role="alert">
+    <div class="d-flex">
+      <div class="toast-body">
+        Item added to cart!
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+    </div>
+  </div>
+</div>
+
+   
+</body>
+</html>
