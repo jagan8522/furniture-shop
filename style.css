@@ -434,6 +434,25 @@ body {
   gap: 35px; 
 }
 
+
+.product-container button {
+  padding: 12px 30px;
+  font-size: 16px;
+  background:  rgb(193,154,131);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
+.product-container button:hover {
+  background:  rgb(194, 127, 89);
+}
+
+
+
 .product-card {
   background: #fff;
   border-radius: 6px;
@@ -442,9 +461,9 @@ body {
   transition: transform 0.3s ease;
 }
 
-.product-card:hover {
+/* .product-card:hover {
   transform: scale(1.03);
-}
+} */
 
 .product-card img {
   width: 100%;
